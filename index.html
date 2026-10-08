@@ -102,7 +102,7 @@ const data=[
 {c:"Marathi Quotes",t:"मनापासून केलेली मेहनत कधीच व्यर्थ जात नाही."},
 {c:"Marathi Quotes",t:"स्वतःची ओळख निर्माण करण्यासाठी आधी स्वतःवर विश्वास ठेवावा लागतो."},
 ];
-const categories=["सगळे","मराठी कविता","Love Shayari","Sad & Emotional","Attitude","Acting Dialogues","Captions","Birthday Wishes","Friendship"];
+const categories=["सगळे","मराठी कविता","Love Shayari","Sad & Emotional","Attitude","Acting Dialogues","Captions","Birthday Wishes","Friendship","Marathi Quotes"];
 let active="सगळे";
 const cats=document.getElementById("cats");
 function renderCats(){cats.innerHTML=categories.map(x=>`<button class="cat ${x===active?'active':''}" onclick="active='${x}';renderCats();render()">${x}</button>`).join("")}
