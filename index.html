@@ -127,6 +127,17 @@ const categories=["सगळे","मराठी कविता","Love Shayari
 let active="सगळे";
 const cats=document.getElementById("cats");
 function renderCats(){cats.innerHTML=categories.map(x=>`<button class="cat ${x===active?'active':''}" onclick="active='${x}';renderCats();render()">${x}</button>`).join("")}
+  const likedPosts = new Set();
+
+function likeText(i, btn) {
+  if (likedPosts.has(i)) {
+    likedPosts.delete(i);
+    btn.innerHTML = '❤️ Like <span class="like-count">0</span>';
+  } else {
+    likedPosts.add(i);
+    btn.innerHTML = '❤️ Liked <span class="like-count">1</span>';
+  }
+}
 function render(){
  let q=document.getElementById("search").value.toLowerCase();
  let items=data.filter(x=>(active==="सगळे"||x.c===active)&&(!q||(x.c+" "+x.t).toLowerCase().includes(q)));
