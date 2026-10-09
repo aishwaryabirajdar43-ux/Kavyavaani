@@ -139,12 +139,6 @@ function likeText(i, btn) {
   }
 }
 function render(){
-  
- <div class="actions">
-<button onclick="copyText(${data.indexOf(x)})">📋 Copy</button>
-<button onclick="shareText(${data.indexOf(x)})">↗ Share</button>
-<button onclick="likeText(${data.indexOf(x)}, this)">❤️ Like <span class="like-count">0</span></button>
-</div></article>
  let q=document.getElementById("search").value.toLowerCase();
  let items=data.filter(x=>(active==="सगळे"||x.c===active)&&(!q||(x.c+" "+x.t).toLowerCase().includes(q)));
  document.getElementById("grid").innerHTML=items.length?items.map((x,i)=>`
