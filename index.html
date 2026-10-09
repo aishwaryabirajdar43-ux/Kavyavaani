@@ -143,6 +143,7 @@ function render(){
  let items=data.filter(x=>(active==="सगळे"||x.c===active)&&(!q||(x.c+" "+x.t).toLowerCase().includes(q)));
  document.getElementById("grid").innerHTML=items.length?items.map((x,i)=>`
  <article class="card"><div class="badge">${x.c}</div><div class="text">${x.t}</div>
+ <article class="card"><div class="badge">${x.c}</div><div class="text">${x.t}</div>
 async function copyText(i){await navigator.clipboard.writeText(data[i].t);alert("Copy झाले ❤️")}
 async function shareText(i){let s=data[i].t;if(navigator.share) await navigator.share({title:"KavyaVaani",text:s}); else {await navigator.clipboard.writeText(s);alert("Text copy झाले — आता share करू शकतेस ❤️")}}
 renderCats();render();
