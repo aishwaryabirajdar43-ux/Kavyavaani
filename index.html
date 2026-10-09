@@ -31,32 +31,32 @@ footer{text-align:center;padding:30px;color:#806b76}
   <div class="search"><input id="search" placeholder="कविता, dialogue, shayari शोधा..."><button onclick="render()">शोधा</button></div>
 </header>
 <main>
-  <div style="display:flex; gap:20px; align-items:flex-start; flex-wrap:wrap;">
+  
+<div style="display:flex; gap:20px; align-items:flex-start; flex-wrap:wrap;">
 
-    <div style="flex:1; min-width:200px;">
-      <h2 id="about">About Us</h2>
-      <p>KavyaVaani is a Marathi content website where you can find beautiful poems, shayari, captions, birthday wishes, friendship quotes and acting dialogues.</p>
-    </div>
+  <details id="about" style="flex:1; min-width:200px;">
+    <summary>About Us</summary>
+    <p>KavyaVaani is a Marathi content website where you can find poems, shayari, captions, birthday wishes, friendship quotes and acting dialogues.</p>
+  </details>
 
-    <div style="flex:1; min-width:200px;">
-      <h2 id="contact">Contact Us</h2>
-      <p>If you have any questions, suggestions, or feedback about KavyaVaani, we would love to hear from you.</p>
-      <p>Thank you for visiting KavyaVaani!</p>
-    </div>
+  <details id="contact" style="flex:1; min-width:200px;">
+    <summary>Contact Us</summary>
+    <p>If you have any questions, suggestions, or feedback about KavyaVaani, we would love to hear from you.</p>
+    <p>Thank you for visiting KavyaVaani!</p>
+  </details>
 
-    <div style="flex:1; min-width:200px;">
-      <h2 id="other">Privacy Policy</h2>
-      <p>KavyaVaani respects your privacy. We do not collect personal information unless you choose to provide it. We may use cookies or similar technologies to improve the website experience.</p>
-      <p>We may use third-party services such as advertising or analytics tools in the future. These services may collect information according to their own privacy policies.</p>
-      <p>If you have any questions about this Privacy Policy, please contact KavyaVaani.</p>
-    </div>
+  <details id="other" style="flex:1; min-width:200px;">
+    <summary>Privacy Policy</summary>
+    <p>KavyaVaani respects your privacy. We may use cookies or third-party services such as advertising tools. These services may collect information according to their own privacy policies.</p>
+    <p>If you have any questions about this Privacy Policy, please contact KavyaVaani.</p>
+  </details>
 
-    <div style="flex:1; min-width:200px;">
-      <h2 id="disclaimer">Disclaimer</h2>
-      <p>The information and content shared on KavyaVaani are provided for general informational and entertainment purposes. We try our best to keep the content useful and accurate.</p>
-      <p>KavyaVaani does not guarantee that all information will always be complete, current, or error-free. Users are responsible for how they use the information available on this website.</p>
-      <p>By using KavyaVaani, you agree to use the website at your own discretion.</p>
-    </div>
+  <details id="disclaimer" style="flex:1; min-width:200px;">
+    <summary>Disclaimer</summary>
+    <p>KavyaVaani shares content for general informational and entertainment purposes. We try our best to keep the content useful and accurate.</p>
+    <p>We cannot guarantee that all information will always be complete, current, or error-free.</p>
+  </details>
+</div>
 
   <div class="cats" id="cats"></div>
   <section class="grid" id="grid"></section>
