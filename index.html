@@ -141,9 +141,19 @@ function likeText(i, btn) {
 function render(){
  let q=document.getElementById("search").value.toLowerCase();
  let items=data.filter(x=>(active==="सगळे"||x.c===active)&&(!q||(x.c+" "+x.t).toLowerCase().includes(q)));
- document.getElementById("grid").innerHTML=items.length?items.map((x,i)=>`
- <article class="card"><div class="badge">${x.c}</div><div class="text">${x.t}</div>
- <article class="card"><div class="badge">${x.c}</div><div class="text">${x.t}</div>
+
+ document.getElementById("grid").innerHTML=items.length?items.map(x=>{
+ let i=data.indexOf(x);
+ return `<article class="card">
+ <div class="badge">${x.c}</div>
+ <div class="text">${x.t}</div>
+ <div class="actions">
+ <button onclick="copyText(${i})">📋 Copy</button>
+ <button onclick="shareText(${i})">↗ Share</button>
+ <button onclick="likeText(${i}, this)">❤️ Like</button>
+ </div></article>`;
+ }).join(""):`<div class="empty">काही सापडलं नाही. दुसरा शब्द शोधा 😊</div>`;
+      }
 async function copyText(i){await navigator.clipboard.writeText(data[i].t);alert("Copy झाले ❤️")}
 async function shareText(i){let s=data[i].t;if(navigator.share) await navigator.share({title:"KavyaVaani",text:s}); else {await navigator.clipboard.writeText(s);alert("Text copy झाले — आता share करू शकतेस ❤️")}}
 renderCats();render();
