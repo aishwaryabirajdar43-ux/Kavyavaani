@@ -112,6 +112,56 @@ header {
   overflow-wrap: anywhere;
   }
 </style>
+  /* Welcome section */
+.welcome {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  margin: 25px 0;
+  padding: 35px 18px;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #ffe0ef, #f0e2ff, #fff5fa);
+  border: 1px solid #f3c9e5;
+  box-shadow: 0 8px 25px #b84d9618;
+}
+
+.flower {
+  font-size: 30px;
+  margin-bottom: 12px;
+}
+
+.welcome-small {
+  color: #9b4d85;
+  font-size: 14px;
+}
+
+.welcome h1 {
+  color: #7b2ff7;
+  font-size: 27px;
+  line-height: 1.5;
+  margin: 12px 0;
+}
+
+.welcome p {
+  line-height: 1.8;
+}
+
+.explore-btn {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 12px 23px;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #7b2ff7, #f04b9b);
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 5px 15px #d946a544;
+}
+
+@media (max-width: 480px) {
+  .welcome h1 {
+    font-size: 22px;
+  }
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-KG9CZ1QLBJ"></script>
 <script>
@@ -128,6 +178,13 @@ gtag('config','G-KG9CZ1QLBJ');
   <div class="tag">शब्द जे मनाला स्पर्शून जातात…</div>
   <div class="search"><input id="search" placeholder="कविता, dialogue, shayari शोधा..."><button onclick="render()">शोधा</button></div>
 </header>
+  <section class="welcome">
+  <div class="flower">🌸 🌷 🌸</div>
+  <p class="welcome-small">मनातल्या भावनांना शब्द देणारी जागा</p>
+  <h1>काव्यवाणीमध्ये तुमचं स्वागत ❤️</h1>
+  <p>प्रत्येक शब्दात भावना, प्रत्येक कवितेत एक गोष्ट…</p>
+  <a href="#cats" class="explore-btn">कविता वाचा ✨</a>
+  </section>
 <main>
   
 <div style="display:flex; gap:20px; align-items:flex-start; flex-wrap:wrap;">
