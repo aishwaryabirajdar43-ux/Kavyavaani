@@ -112,12 +112,9 @@ footer{background:linear-gradient(90deg,#a97ab3,#bd7eac);color:#fff;padding:22px
   <h2 class="heading">❀ कॅटेगरीजनुसार कविता</h2>
   <div id="categories"></div>
 
-  <h2 class="heading">🔥 Popular ओळी</h2>
-  <div id="popular" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:28px"></div>
-
-  <h2 class="heading" id="allHeading">🌸 सर्व कविता</h2>
-  <div id="grid"></div>
-
+  const popular = data.map((item,index)=>({...item,index})).slice(0,3);
+document.getElementById("popular").innerHTML = popular.map(item=>card(item,item.index)).join("");
+ 
   <div class="info-grid">
     <details id="about">
       <summary>About Us</summary>
