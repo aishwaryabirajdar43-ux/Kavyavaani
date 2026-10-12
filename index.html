@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="mr">
 <head>
@@ -8,45 +9,51 @@
 
 <style>
 *{box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{margin:0;font-family:Arial,"Noto Sans Devanagari",sans-serif;background:#fff5fb;color:#54304b}
 a{color:inherit;text-decoration:none}
+button{cursor:pointer;border:0;font-family:inherit}
+
 .topbar{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:14px 5%;background:#fff;box-shadow:0 2px 12px #67244c12}
 .logo{font-family:Georgia,serif;font-style:italic;font-size:25px;color:#a0448d;font-weight:bold}
 .nav{display:flex;flex-wrap:wrap;gap:13px;font-size:12px}
 .nav a:hover{color:#b83b9c}
-.hero{padding:55px 6%;background:linear-gradient(90deg,#fff1f9eF,#fff1f955),url('https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1600&q=85') center/cover;min-height:270px}
+
+.hero{padding:55px 6%;background:linear-gradient(90deg,#fff1f9ef,#fff1f955),url('https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1600&q=85') center/cover;min-height:270px}
 .hero small{font-family:Georgia,serif;font-style:italic;font-size:20px;color:#a0448d}
 .hero h1{font-family:Georgia,serif;font-style:italic;font-size:43px;color:#9a3488;margin:10px 0}
 .hero p{max-width:420px;line-height:1.8;font-size:14px}
-.search{display:flex;max-width:370px;margin-top:20px;background:white;border:1px solid #ead4e7;border-radius:30px;overflow:hidden}
+
+.search{display:flex;max-width:430px;margin-top:20px;background:white;border:1px solid #ead4e7;border-radius:30px;overflow:hidden}
 .search input{border:0;outline:0;padding:13px;min-width:0;flex:1}
-button{cursor:pointer;border:0;font-family:inherit}
 .search button{background:#a52e96;color:white;padding:0 22px}
+
 main{max-width:1100px;margin:auto;padding:20px 16px}
-.feature{display:grid;grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);gap:20px;align-items:center;background:#fff0f8;border:1px solid #f0d7e9;border-radius:22px;padding:18px;margin:0 0 28px}
-.feature img{width:100%;height:180px;object-fit:cover;border-radius:13px}
+
+.feature{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:20px;align-items:center;background:#fff0f8;border:1px solid #f0d7e9;border-radius:22px;padding:18px;margin-bottom:28px}
+.feature img{width:100%;height:190px;object-fit:cover;border-radius:13px}
 .tag{display:inline-block;background:#f8d9ee;color:#8c3277;padding:7px 12px;border-radius:25px;font-size:12px}
 .feature h2{color:#983a83;margin:12px 0}
 .feature p{line-height:1.8;font-size:14px;white-space:pre-line}
 .feature button{background:#fff8fc;color:#913a7e;border:1px solid #efd6e8;border-radius:25px;padding:11px 18px;margin-top:8px}
+
 .heading{font-size:21px;margin:26px 0 15px;color:#69375f}
-#categories{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:30px}
-.category{background:#f8e4f2;color:#753d68;padding:10px 13px;border-radius:22px;font-size:13px}
-.category.active{background:#a0448d;color:white}
-#grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
-.card{background:#fff;border:1px solid #f0dfe9;border-radius:15px;padding:15px;box-shadow:0 4px 14px #6d2b4d0c;display:flex;flex-direction:column;min-height:170px}
-.label{font-size:12px;color:#a04a8d;margin-bottom:12px}
-.poem{font-size:14px;line-height:1.9;white-space:pre-line;overflow-wrap:anywhere;flex:1}
-.actions{display:flex;gap:7px;margin-top:15px}
-.actions button{flex:1;background:#f8e5f0;color:#88416f;padding:9px 5px;border-radius:9px;font-size:13px}
-.actions button:hover{background:#efd0e4}
-.empty{grid-column:1/-1;text-align:center;padding:30px;background:#fff;border-radius:15px}
+
+#categories{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-bottom:30px}
+.category{min-height:95px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:linear-gradient(145deg,#f6e3fa,#fce7f3);color:#753d8a;border:1px solid #f0d9ef;border-radius:13px;padding:12px 6px;font-size:13px;transition:transform .2s,background .2s}
+.category .ico{font-size:25px}
+.category:hover{transform:translateY(-3px)}
+.category.active{background:linear-gradient(145deg,#f2d8f3,#fbdce9);color:#a0448d;border:2px solid #e9c5e4}
+#categoryMessage{background:#fff;border:1px solid #f0dfe9;border-radius:15px;padding:18px;margin-top:8px;color:#784268;line-height:1.8}
+
 .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:25px 0}
 details{background:#fff;border:1px solid #eedce8;border-radius:12px;padding:14px;font-size:13px}
 summary{cursor:pointer;font-weight:bold;color:#784268}
 details p{line-height:1.8}
+
 footer{background:linear-gradient(90deg,#a97ab3,#bd7eac);color:#fff;padding:22px 5%;font-size:12px}
 .footer-inner{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+
 @media(max-width:700px){
  .topbar{justify-content:center}
  .nav{justify-content:center}
@@ -54,16 +61,14 @@ footer{background:linear-gradient(90deg,#a97ab3,#bd7eac);color:#fff;padding:22px
  .hero h1{font-size:35px}
  .feature{grid-template-columns:1fr}
  .feature img{height:190px}
- #grid{grid-template-columns:repeat(2,minmax(0,1fr))}
- .card{padding:12px;min-height:185px}
- .poem{font-size:13px}
-}
-@media(max-width:420px){
- #grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
- .category{font-size:12px;padding:9px 10px}
+ #categories{grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+ .category{min-height:88px;font-size:12px}
+ .category .ico{font-size:23px}
  .info-grid{grid-template-columns:1fr}
- .card{padding:10px}
- .actions button{font-size:12px}
+}
+@media(max-width:380px){
+ #categories{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .hero h1{font-size:31px}
 }
 </style>
 </head>
@@ -85,10 +90,10 @@ footer{background:linear-gradient(90deg,#a97ab3,#bd7eac);color:#fff;padding:22px
   <small>Welcome to</small>
   <h1>KavyaVaani ♡</h1>
   <strong>शब्द जे मनाला स्पर्शून जातात...</strong>
-  <p>इथे तुम्हाला सुंदर कविता, शायरी, captions, वाढदिवसाच्या शुभेच्छा, मैत्रीचे विचार आणि अभिनयासाठी संवाद यांचा सुंदर संग्रह मिळेल.</p>
+  <p>इथे तुम्हाला सुंदर कविता, शायरी, कॅप्शन, वाढदिवसाच्या शुभेच्छा, मैत्रीचे विचार आणि अभिनयासाठी संवाद यांचा सुंदर संग्रह मिळेल.</p>
   <div class="search">
-    <input id="search" type="search" placeholder="कविता, dialogue, shayari शोधा..." oninput="render()">
-    <button onclick="render()">शोधा</button>
+    <input id="search" type="search" placeholder="कविता, dialogue, shayari शोधा..." oninput="searchCategory()">
+    <button onclick="searchCategory()">शोधा</button>
   </div>
 </section>
 
@@ -100,36 +105,37 @@ footer{background:linear-gradient(90deg,#a97ab3,#bd7eac);color:#fff;padding:22px
     <div>
       <span class="tag">❀ आजची खास कविता</span>
       <h2>स्वप्न अजूनही आहेत...</h2>
-      <p>थोडीशी शांत, थोडी प्रेमळ, थोडी विश्वास,
+      <p>थोडीशी साथ, थोडं प्रेम, थोडा विश्वास,
 आणि पुन्हा एकदा नव्याने जगण्याची आस...
 स्वप्न अजूनही आहेत,
-फक्त त्यांना पूर्ण करायचा आहे...</p>
+फक्त त्यांना पूर्ण करायचं आहे...</p>
       <strong>♡ — KavyaVaani</strong><br>
-      <button onclick="setCategory('मराठी कविता')">वाचा पूर्ण कविता →</button>
+      <button onclick="selectCategory('मराठी कविता')">वाचा पूर्ण कविता →</button>
     </div>
   </section>
 
   <h2 class="heading">❀ कॅटेगरीजनुसार कविता</h2>
   <div id="categories"></div>
+  <div id="categoryMessage">तुमच्या आवडीची Category निवडा किंवा वर कविता शोधा. 🌸</div>
 
-  const popular = data.map((item,index)=>({...item,index})).slice(0,3);
-document.getElementById("popular").innerHTML = popular.map(item=>card(item,item.index)).join("");
- 
   <div class="info-grid">
     <details id="about">
       <summary>आमच्याबद्दल</summary>
-<p>KavyaVaani ही मराठी वेबसाइट आहे. येथे तुम्हाला सुंदर कविता, शायरी, कॅप्शन, वाढदिवसाच्या शुभेच्छा, मैत्रीचे विचार आणि अभिनयासाठी संवाद वाचायला मिळतील.</p>
+      <p>KavyaVaani ही मराठी वेबसाइट आहे. येथे तुम्हाला सुंदर कविता, शायरी, कॅप्शन, वाढदिवसाच्या शुभेच्छा, मैत्रीचे विचार आणि अभिनयासाठी संवाद वाचायला मिळतील.</p>
     </details>
+
     <details id="contact">
-      <summary>Contact Us</summary>
-      <p>तुमच्या काही सूचना, प्रश्न किंवा feedback असल्यास ते नोंदवून ठेवा. तुमचा feedback आमच्यासाठी महत्त्वाचा आहे.</p>
+      <summary>संपर्क</summary>
+      <p>तुमच्या काही सूचना, प्रश्न किंवा अभिप्राय असल्यास ते आमच्यासाठी महत्त्वाचे आहेत.</p>
     </details>
+
     <details id="privacy">
-      <summary>Privacy Policy</summary>
+      <summary>गोपनीयता धोरण</summary>
       <p>या वेबसाइटमध्ये शोधण्यासाठी दिलेला मजकूर तुमच्या ब्राउझरमध्ये वापरला जातो. या कोडमध्ये वैयक्तिक माहिती गोळा करण्याची सुविधा जोडलेली नाही.</p>
     </details>
+
     <details id="disclaimer">
-      <summary>Disclaimer</summary>
+      <summary>अस्वीकरण</summary>
       <p>या वेबसाइटवरील मजकूर मनोरंजन आणि सर्जनशील वापरासाठी आहे. मजकुराचा वापर करताना योग्य संदर्भ आणि हक्कांचा आदर करा.</p>
     </details>
   </div>
@@ -138,113 +144,83 @@ document.getElementById("popular").innerHTML = popular.map(item=>card(item,item.
 <footer>
   <div class="footer-inner">
     <span>© 2026 KavyaVaani • मनातले शब्द, तुमच्यासाठी ❤️</span>
-    <span><a href="#about">About Us</a>　<a href="#contact">Contact Us</a>　<a href="#privacy">Privacy Policy</a>　<a href="#disclaimer">Disclaimer</a></span>
+    <span><a href="#about">आमच्याबद्दल</a>　<a href="#contact">संपर्क</a>　<a href="#privacy">गोपनीयता</a>　<a href="#disclaimer">अस्वीकरण</a></span>
   </div>
 </footer>
 
 <script>
 const categories = [
- ["सगळे","▦"],["मराठी कविता","✍"],["Love Shayari","♡"],
- ["Sad & Emotional","☁"],["Attitude","♛"],["Acting Dialogues","▣"],
- ["Captions","▧"],["Birthday Wishes","🎂"],["Friendship","♧"],
+ ["सगळे","▦"],
+ ["मराठी कविता","✍"],
+ ["Love Shayari","♡"],
+ ["Sad & Emotional","☁"],
+ ["Attitude","♛"],
+ ["Acting Dialogues","▣"],
+ ["Captions","▧"],
+ ["Birthday Wishes","🎂"],
+ ["Friendship","♧"],
  ["Marathi Quotes","✦"]
-];
-
-const data = [
- {c:"मराठी कविता",t:"मनातल्या भावना शब्दांत सांगता येत नाहीत,\nकाही गोष्टी फक्त डोळ्यांतून कळतात. ❤️"},
- {c:"मराठी कविता",t:"स्वप्न मोठी असू देत,\nप्रयत्न रोजचे असू देत,\nयश एक दिवस नक्कीच मिळेल. ✨"},
- {c:"मराठी कविता",t:"स्वप्न अजूनही आहेत,\nफक्त त्यांना पूर्ण करायचं आहे...\nमनात आशा जिवंत ठेवायची आहे. 🌸"},
- {c:"Love Shayari",t:"तुझ्या एका हास्यात माझा दिवस खुलतो,\nतुझ्या आठवणींनी मन पुन्हा पुन्हा फुलतं. ❤️"},
- {c:"Love Shayari",t:"तू जवळ असलास की जग सुंदर वाटतं,\nतुझ्याशिवाय प्रत्येक क्षण अपुरा वाटतो. 💕"},
- {c:"Love Shayari",t:"तुझ्यासोबतचा प्रत्येक क्षण खास आहे,\nमाझ्या मनात तुझंच एक सुंदर स्थान आहे. 💗"},
- {c:"Sad & Emotional",t:"हसणाऱ्या चेहऱ्यामागेही दुःख असतं,\nप्रत्येक शांत व्यक्तीच्या मनात वादळ असतं. 💔"},
- {c:"Sad & Emotional",t:"काही आठवणी पुसता येत नाहीत,\nकाही माणसं विसरता येत नाहीत. 🥀"},
- {c:"Sad & Emotional",t:"वेळ बदलतो, माणसं बदलतात,\nपण काही आठवणी कायम मनात राहतात. 🌹"},
- {c:"Attitude",t:"माझी ओळख मी स्वतः बनवणार,\nमाझ्या मेहनतीने माझं स्वप्न पूर्ण करणार. 👑"},
- {c:"Attitude",t:"मी शांत आहे म्हणजे कमजोर नाही,\nवेळ आल्यावर उत्तर द्यायला विसरत नाही. 🔥"},
- {c:"Acting Dialogues",t:"माझी कहाणी अजून संपलेली नाही,\nआता तर माझी खरी सुरुवात आहे! 🎬"},
- {c:"Acting Dialogues",t:"मला संधी मिळाली तर मी स्वतःला सिद्ध करून दाखवेन! ✨"},
- {c:"Captions",t:"Simple life, beautiful thoughts. 🌸"},
- {c:"Captions",t:"आज स्वतःसाठी जगायचं,\nस्वतःवर प्रेम करायचं. 💖"},
- {c:"Birthday Wishes",t:"तुझ्या आयुष्यात आनंद, प्रेम आणि यश भरभरून येवो. वाढदिवसाच्या खूप शुभेच्छा! 🎂"},
- {c:"Birthday Wishes",t:"तुझी प्रत्येक इच्छा पूर्ण होवो आणि आयुष्य आनंदाने भरून जावो. Happy Birthday! 🎉"},
- {c:"Friendship",t:"मैत्री म्हणजे रोज बोलणं नाही,\nतर न बोलताही एकमेकांना समजून घेणं. 🤝"},
- {c:"Friendship",t:"खरी मैत्री वेळेनुसार बदलत नाही,\nती प्रत्येक परिस्थितीत साथ देते. 💛"},
- {c:"Marathi Quotes",t:"स्वतःवर विश्वास ठेवा,\nकारण तुमची ताकद तुम्हालाच ओळखायची आहे. 🌟"},
- {c:"Marathi Quotes",t:"छोट्या छोट्या प्रयत्नांतूनच,\nमोठ्या स्वप्नांची सुरुवात होते. ✨"}
 ];
 
 let active = "सगळे";
 
-function escapeHTML(text) {
- return text.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
-}
+const categoryDescriptions = {
+ "सगळे":"सर्व Categories मधील कविता आणि शायरीसाठी ही Category निवडा. 🌸",
+ "मराठी कविता":"सुंदर मराठी कविता आणि मनातील भावना व्यक्त करणारे शब्द. ✍️",
+ "Love Shayari":"प्रेम, भावना आणि खास व्यक्तीसाठी शायरी. ❤️",
+ "Sad & Emotional":"मनाला स्पर्श करणाऱ्या भावनिक ओळी. 🥀",
+ "Attitude":"आत्मविश्वास आणि स्वतःची ओळख सांगणारे विचार. 👑",
+ "Acting Dialogues":"अभिनयाच्या सरावासाठी संवाद. 🎬",
+ "Captions":"फोटो आणि सोशल मीडियासाठी सुंदर कॅप्शन. 🌷",
+ "Birthday Wishes":"वाढदिवसासाठी शुभेच्छा संदेश. 🎂",
+ "Friendship":"मैत्री आणि मैत्रीच्या नात्यावरील विचार. 🤝",
+ "Marathi Quotes":"प्रेरणादायी मराठी सुविचार. ✨"
+};
 
-function setCategory(category) {
- active = category;
- renderCats();
- render();
- document.getElementById("allHeading").scrollIntoView({behavior:"smooth",block:"start"});
-}
-
-function renderCats() {
- document.getElementById("categories").innerHTML = categories.map(([name,icon]) =>
-  `<button class="category ${active===name?"active":""}" onclick="setCategory('${name}')">${icon} ${name}</button>`
+function renderCats(){
+ const container = document.getElementById("categories");
+ container.innerHTML = categories.map(([name,icon]) =>
+  `<button class="category ${active===name?"active":""}" onclick="selectCategory('${name}')">
+    <span class="ico">${icon}</span>
+    <span>${name}</span>
+  </button>`
  ).join("");
 }
 
-function card(item,index) {
- return `<article class="card">
-   <div class="label">#${escapeHTML(item.c)}</div>
-   <div class="poem">${escapeHTML(item.t)}</div>
-   <div class="actions">
-    <button onclick="copyText(${index})">▢ Copy</button>
-    <button onclick="shareText(${index})">• Share</button>
-   </div>
-  </article>`;
+function selectCategory(name){
+ active = name;
+ renderCats();
+ const query = document.getElementById("search").value.trim();
+ document.getElementById("categoryMessage").textContent =
+  query ? `“${query}” साठी शोध सुरू आहे. निवडलेली Category: ${name}.`
+        : categoryDescriptions[name];
 }
 
-function render() {
- const query = document.getElementById("search").value.toLowerCase().trim();
- const list = data.map((item,index)=>({...item,index})).filter(item =>
-  (active==="सगळे" || item.c===active) &&
-  (!query || (item.c+" "+item.t).toLowerCase().includes(query))
+function searchCategory(){
+ const query = document.getElementById("search").value.trim();
+ const message = document.getElementById("categoryMessage");
+
+ if(!query){
+  message.textContent = categoryDescriptions[active];
+  return;
+ }
+
+ const match = categories.find(([name]) =>
+  name.toLowerCase().includes(query.toLowerCase())
  );
 
- document.getElementById("grid").innerHTML = list.length
-  ? list.map(item=>card(item,item.index)).join("")
-  : `<div class="empty">काही सापडलं नाही. दुसरा शब्द शोधा 😊</div>`;
-
- const popular = data.map((item,index)=>({...item,index})).slice(0,3);
- document.getElementById("popular").innerHTML = popular.map(item=>card(item,item.index)).join("");
-}
-
-async function copyText(index) {
- const text = data[index].t;
- try {
-  await navigator.clipboard.writeText(text);
-  alert("कविता Copy झाली ❤️");
- } catch(error) {
-  window.prompt("कविता Copy करण्यासाठी मजकूर निवडा:",text);
+ if(match){
+  active = match[0];
+  renderCats();
+  message.textContent = categoryDescriptions[active];
+ }else{
+  message.textContent = `“${query}” साठी Category मध्ये जुळणारा पर्याय सापडला नाही. दुसरा शब्द वापरून पाहा.`;
  }
 }
 
-async function shareText(index) {
- const text = data[index].t;
- try {
-  if(navigator.share) {
-   await navigator.share({title:"KavyaVaani",text:text,url:location.href});
-  } else {
-   await navigator.clipboard.writeText(text);
-   alert("कविता Copy झाली — आता Share करू शकता ❤️");
-  }
- } catch(error) {
-  if(error.name!=="AbortError") alert("Share करता आलं नाही. पुन्हा प्रयत्न करा.");
- }
-}
 renderCats();
-render();
 </script>
 </body>
 </html>
+   
 
