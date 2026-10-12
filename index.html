@@ -84,11 +84,7 @@ const data=[
 {c:"Marathi Quotes",t:"चांगले दिवस आपल्या प्रयत्नांनी निर्माण करावे लागतात.",img:"https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=500&q=80",n:18}
 ];
 const categories=[["सगळे","▦"],["मराठी कविता","♧"],["Love Shayari","♡"],["Sad & Emotional","☁"],["Attitude","♛"],["Acting Dialogues","▣"],["Captions","▧"],["Birthday Wishes","♟"],["Friendship","♧"],["Marathi Quotes","✦"]];
-function setCategory(c){active=c;renderCats();render();document.getElementById("poems").scrollIntoView({behavior:"smooth",block:"start"})}
-function renderCats(){document.getElementById("categories").innerHTML=categories.map(([name,icon])=>`<button class="category ${active===name?'active':''}" onclick="setCategory('${name}')"><span class="ico">${icon}</span><span>${name}</span></button>`).join("")}
-function render(){const q=document.getElementById("search").value.toLowerCase();const list=data.map((x,i)=>({...x,i})).filter(x=>(active==="सगळे"||x.c===active)&&(!q||(x.c+" "+x.t).toLowerCase().includes(q)));document.getElementById("grid").innerHTML=list.length?list.map(x=>`<article class="card"><div class="card-top"><span class="label">#${x.c}</span>
-async function copyText(i){try{await navigator.clipboard.writeText(data[i].t);alert("कविता Copy झाली ❤️")}catch(e){alert(data[i].t)}}
-async function shareText(i){try{if(navigator.share)await navigator.share({title:"KavyaVaani",text:data[i].t,url:location.href});else{await navigator.clipboard.writeText(data[i].t);alert("कविता Copy झाली — आता Share करू शकता ❤️")}}catch(e){}}
+{try{if(navigator.share)await navigator.share({title:"KavyaVaani",text:data[i].t,url:location.href});else{await navigator.clipboard.writeText(data[i].t);alert("कविता Copy झाली — आता Share करू शकता ❤️")}}catch(e){}}
 renderCats();render();
 </script>
 </body>
