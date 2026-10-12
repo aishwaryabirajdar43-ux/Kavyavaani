@@ -34,7 +34,12 @@ main{max-width:1100px;margin:auto;padding:20px 16px}
 .category{min-height:95px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:linear-gradient(145deg,#f6e3fa,#fce7f3);color:#753d8a;border:1px solid #f0d9ef;border-radius:13px;padding:12px 6px;font-size:13px}
 .category .ico{font-size:25px}
 .category.active{background:linear-gradient(145deg,#f2d8f3,#fbdce9);color:#a0448d;border:2px solid #e9c5e4}
-#poems{margin-top:22px}
+#poems{
+  margin-top:22px;
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:10px;
+}
 .poem-item{
 background:#fff;
 border:1px solid #f0dfe9;
